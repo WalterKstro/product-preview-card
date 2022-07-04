@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --darkcyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --verydarkblue: hsl(212, 21%, 14%);
+    --darkgrayishblue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    --sizeLg: 1.7rem;
+    --sizeMd: 1.1rem;
+    --sizeSm: .57rem;
+
+    --font-title: 'Fraunces', serif;
+    --font-body : 'Montserrat', sans-serif;
+
+    --fz-lg: 2.2rem;
+}
+body,html{
+    font-size: 14px;
+}
+/* Reset */
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/* Mobile Layout  375px */
+.wrapper{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var( --cream );
+    display: flex;
+}
+.card{
+    max-width: 22.9rem; /* 320 */
+    width: 100%;
+    min-height: 42.9rem; /* 600 */
+    height: 100%;
+    border-radius: var(--sizeMd);
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Flex Items of Card*/
+.image{
+    flex-grow: 3;
+}
+.info{
+    flex-grow: 1;
+}
+.image{
+    background-image: url("./images/image-product-mobile.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.info{
+    background-color: var(--white);
+    font-family: var(--font-body);
+    padding: var(--sizeLg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*Componentes of flex items*/
+.title{
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: var(--fz-lg);
+    color: var(--verydarkblue);
+    line-height: 2.3rem;
+}
+.tag{
+    text-transform: uppercase;
+    color: var(--darkgrayishblue);
+    letter-spacing: .25rem;
+    font-weight: 500;
+}
+.description{
+    color: var(--darkgrayishblue);
+    line-height: 1.7rem;
+    font-weight: 500;
+}
+.price{
+    font-size: var(--fz-lg);
+    color: var(--darkcyan);
+    font-family: var(--font-title);
+    display: flex;
+    align-items: center;
+}
+.price-old{
+    color: var(--darkgrayishblue);
+    font-size: 1rem;
+    margin-left: var(--sizeLg);
+    font-weight: initial;
+    font-family: var(--font-body);
+}
+.btb-buy{
+    background-color: var(--darkcyan);
+    padding: var(--sizeMd) 0;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: var(--sizeSm);
+    font-weight: 700;
+}
+.btb-buy:active{
+    background-color: var(--verydarkblue);
+}
+.icon{
+    margin-right: var(--sizeMd);
+}
+
+
+/* Desktop Layout 1440px*/
+@media screen and (min-width: 1440px) {
+    .card{
+        flex-direction: row;
+        max-width: 40rem;
+        width: 100%;
+        min-height: 30rem; /* 420 */
+        height: 100%;
+    }
+
+    .image,
+    .info{
+        flex: 1 1 0;
+    }
+    .image{
+        background-image: url("./images/image-product-desktop.jpg");
+    }
+
+}
+
+
